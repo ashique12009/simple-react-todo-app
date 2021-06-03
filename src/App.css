@@ -2,3 +2,9 @@
   padding-left: 0;
   padding-right: 0;
 }
+.top-navbar .navbar-brand{
+  margin-left: 15px;
+}
+.top-navbar ul li.nav-item{
+  margin-left: 15px;
+}
