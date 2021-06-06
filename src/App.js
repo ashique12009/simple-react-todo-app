@@ -1,20 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 import {Route, BrowserRouter as Router} from 'react-router-dom';
 import Header from './Header';
 import Home from './Pages/Home';
 import About from './Pages/About';
-import Todo from './Pages/Todo';
+import Todos from './Pages/Todos';
 
 function App() {
+  let todos = [
+    {
+      sno: 1,
+      title: 'First task',
+      detail: 'Complete this first task'
+    },
+    {
+      sno: 2,
+      title: 'Second task',
+      detail: 'Complete this second task'
+    },
+    {
+      sno: 3,
+      title: 'Third task',
+      detail: 'Complete this third task'
+    }
+  ];
+  
   return (
     <Router>      
       <div className="App container-fluid">
-        <Header />
+        <Header todos={todos} />
       </div>
-      <Route path="/" exact component={Home}/>
+      <Route exact path="/"><Home todos={todos} /></Route>
       <Route path="/about" component={About}/>
-      <Route path="/todo" component={Todo}/>
+      <Route path="/todos" component={Todos}/>
     </Router>
   );
 }
