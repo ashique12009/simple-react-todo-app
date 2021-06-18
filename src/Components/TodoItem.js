@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './TodoItem.css';
 
-function TodoItem(props) {
+function TodoItem({todo, onDelete}) {
   return (
-    <div>
-      <h4>{props.todo.title}</h4>
-      <p>{props.todo.detail}</p>
-      <button className="btn btn-danger" onClick={()=>props.onDelete}>Delete</button>
+    <div className="round-border">
+      <h4>{todo.title}</h4>
+      <p>{todo.detail}</p>
+      <button className="btn btn-danger" onClick={()=>onDelete}>Delete</button>
     </div>
   );
 }

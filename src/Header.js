@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 function Header(props) {
+  console.log(props);
   return (
     <div>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark top-navbar">
@@ -29,7 +30,7 @@ function Header(props) {
                 to={{
                   pathname: '/todos',
                   state: {
-                    todos: props.todos
+                    todos: props.todos,
                   }
                 }} 
                 className="nav-link">Todo</Link>

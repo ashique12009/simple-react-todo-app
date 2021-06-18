@@ -11,7 +11,7 @@ const Todos = (props) => {
     <div className="container mt-3">
       <h3>Todo List</h3>
       {todos.map((todo) => {
-        return <TodoItem todo={todo} key={todo.sno} />
+        return <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete} />
       })}
     </div>
   );
