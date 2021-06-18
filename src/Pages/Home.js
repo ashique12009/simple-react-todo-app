@@ -1,28 +1,14 @@
 import React from 'react';
 import logo from '../logo.svg';
 import { useHistory } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
 
 function Home(props) {
   const history = useHistory();
-  const location = useLocation();
-
-  let todos = [];
-
-  if (props.todos !== 'undefined') {
-    todos = props.todos;
-  }
-  else {
-    const { todos } = location.state;
-  }
 
   const routeChange = (incomingPath) => { 
     let path = incomingPath; 
     history.push({
       pathname: path,
-      state: {
-        todos: todos
-      }
     });
   }
 

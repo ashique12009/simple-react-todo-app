@@ -34,8 +34,8 @@ function App() {
         <Header todos={todos} onDelete={onDelete} />
       </div>
       <Route exact path="/"><Home todos={todos} /></Route>
-      <Route path="/about" component={About}/>
-      <Route path="/todos" component={Todos} onDelete={onDelete}/>
+      <Route path="/about" component={About} />
+      <Route path="/todos" component={Todos}><Todos todos={todos} onDelete={onDelete}></Todos></Route>
     </Router>
   );
 }
