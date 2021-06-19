@@ -6,7 +6,7 @@ function TodoItem({todo, onDelete}) {
     <div className="round-border">
       <h4>{todo.title}</h4>
       <p>{todo.detail}</p>
-      <button className="btn btn-danger" onClick={onDelete}>Delete</button>
+      <button className="btn btn-danger" onClick={()=>onDelete(todo)}>Delete</button>
     </div>
   );
 }

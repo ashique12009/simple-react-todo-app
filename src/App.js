@@ -4,13 +4,16 @@ import Header from './Header';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Todos from './Pages/Todos';
+import { useState } from 'react';
 
 function App() {
-  const onDelete = () => {
-    console.log('DELETE NOW!');
+  const onDelete = (todo) => {
+    setTodos(todos.filter((e) => {
+      return e !== todo;
+    }));
   }
 
-  let todos = [
+  let [todos, setTodos] = useState([
     {
       sno: 1,
       title: 'First task',
@@ -26,7 +29,7 @@ function App() {
       title: 'Third task',
       detail: 'Complete this third task'
     }
-  ];
+  ]);
   
   return (
     <Router>      
