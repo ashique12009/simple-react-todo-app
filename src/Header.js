@@ -28,6 +28,13 @@ function Header(props) {
                 }}
                 className="nav-link">Todo</Link>
             </li>
+            <li className="nav-item">
+              <Link 
+                to={{
+                  pathname: '/addtodos',
+                }}
+                className="nav-link">Add Todo</Link>
+            </li>
           </ul>
         </div>
       </nav>

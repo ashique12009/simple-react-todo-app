@@ -4,9 +4,27 @@ import Header from './Header';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Todos from './Pages/Todos';
+import AddTodos from './Pages/AddTodos';
 import { useState } from 'react';
 
 function App() {
+  const addTodo = (title, detail) => {
+    let sno = 0;
+    if (todos.length > 0) {
+      sno = todos[todos.length-1].sno + 1;
+    }
+    else {
+      sno = 1;
+    }
+    
+    const incomingTodo = {
+      sno: sno,
+      title: title,
+      detail: detail
+    }
+    setTodos([...todos, incomingTodo]);
+  }
+
   const onDelete = (todo) => {
     setTodos(todos.filter((e) => {
       return e !== todo;
@@ -39,6 +57,7 @@ function App() {
       <Route exact path="/"><Home todos={todos} /></Route>
       <Route path="/about" component={About} />
       <Route path="/todos" component={Todos}><Todos todos={todos} onDelete={onDelete}></Todos></Route>
+      <Route path="/addtodos" component={AddTodos}><AddTodos addTodo={addTodo}></AddTodos></Route>
     </Router>
   );
 }
