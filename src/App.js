@@ -8,7 +8,7 @@ import AddTodos from './Pages/AddTodos';
 import { useState } from 'react';
 
 function App() {
-  const addTodo = (title, detail) => {
+  const addTodo = (title, detail, status) => {
     let sno = 0;
     if (todos.length > 0) {
       sno = todos[todos.length-1].sno + 1;
@@ -20,7 +20,8 @@ function App() {
     const incomingTodo = {
       sno: sno,
       title: title,
-      detail: detail
+      detail: detail,
+      status: status
     }
     setTodos([...todos, incomingTodo]);
   }
@@ -35,17 +36,20 @@ function App() {
     {
       sno: 1,
       title: 'First task',
-      detail: 'Complete this first task'
+      detail: 'Complete this first task',
+      status: 0
     },
     {
       sno: 2,
       title: 'Second task',
-      detail: 'Complete this second task'
+      detail: 'Complete this second task',
+      status: 1
     },
     {
       sno: 3,
       title: 'Third task',
-      detail: 'Complete this third task'
+      detail: 'Complete this third task',
+      status: 0
     }
   ]);
   

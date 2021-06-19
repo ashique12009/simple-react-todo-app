@@ -6,12 +6,12 @@ function AddTodos(props) {
   let history = useHistory();
   const [title, setTitle] = useState("");
   const [detail, setDetail] = useState("");
-
+  const [status, setStatus] = useState(false);
 
   const submit = (e) => {
     e.preventDefault();
     if (title !== "" && detail !== "") {
-      props.addTodo(title, detail);
+      props.addTodo(title, detail, status);
       history.push('/todos');
     }
     else {
@@ -31,6 +31,10 @@ function AddTodos(props) {
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">Detail</label>
           <textarea className="form-control" value={detail} onChange={(e)=>{setDetail(e.target.value)}}></textarea>
+        </div>
+        <div className="mb-3 form-check">
+          <input type="checkbox" className="form-check-input" value={status} onChange={(e)=>{setStatus(e.target.checked)}} id="exampleCheck1"/>
+          <label className="form-check-label" htmlfor="exampleCheck1">Complete</label>
         </div>
         <button className="btn btn-primary">Submit</button>
       </form>
